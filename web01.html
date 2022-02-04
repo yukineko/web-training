@@ -1,0 +1,257 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Web Base 01 basic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">    
+  </head>
+  <body>
+    <style type="text/css">
+      
+      body {
+          background-color:black;
+          color: white;
+          font-family: 'Noto Sans JP', sans-serif;
+          font-size: 32px;          
+      }
+      section {
+          background-color:black;
+          color: white;
+      }
+      h1 {
+          font-size: 80px;
+          font-weight: 500;
+      }
+      h2 {
+          font-size: 50px;
+          font-weight: 500;          
+      }
+      ul li {
+          font-size: 32px;
+          font-weight: 100;
+          margin: 20px 0;
+      }
+      section {
+          height: 80vh;
+          margin: 0;
+          padding: 40px;
+      }
+      section {
+          display: none;
+      }
+
+      section.enabled {
+          display:block;
+      }
+
+      a {
+          color: white;
+      }
+      p {
+          margin: 5px;
+      }
+    </style>
+    <section>
+      <h1>Web Programmingの基本</h1>
+    </section>
+    <section>
+      <h2>Web Programmingってなんだろうね？</h2>
+      <ul>
+        <li>html</li>
+        <li>JavaScript</li>
+        <li>CSS</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Web Programmingってなんだろうね？</h2>
+      <ul>
+        <li>html(hyper text markup language)</li>
+        <li>JavaScript</li>
+        <li>CSS(cascading style sheet)</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Web Programmingってなんだろうね？</h2>
+      <ul>
+        <li>html(文書)</li>
+        <li>JavaScript(動き)</li>
+        <li>CSS(デザイン)</li>
+      </ul>
+      <p>これが基本</p>
+      <p>すべてプログラミング!</p>
+    </section>
+    <section>
+      <h2>HTML</h2>
+      <ul>
+        <li>html(文書)</li>
+        <li>DOM(Document Object Model)</li>
+        <li>構造化されている(Tree)</li>
+        <a href="https://developer.mozilla.org/ja/docs/Web/API/Document_Object_Model" target="_blank">https://developer.mozilla.org/ja/docs/Web/API/Document_Object_Model</a>
+      </ul>
+    </section>
+    <section>
+      <h2>HTML(昔/今)</h2>
+      <ul>
+        <li>構造化されている文書(old)</li>
+        <li>構造化されたコマ(漫画のコマ割リ)</li>
+      </ul>
+    </section>
+    <section>
+      <h2>JavaScript</h2>
+      <ul>
+        <li>Brendan EichがNetscapeに導入したのがはじまり</li>
+        <li>Scheme書きたかったけどJavaっぽくしてくれといわれてそうなった</li>
+        <li>実際のところJavaっぽ文法だけどSchemeっぽい構造</li>
+        <li>名前空間がない、LISP1, first class function...</li>
+      </ul>
+
+    </section>
+    <section>
+      <h2>JavaScript</h2>
+      <ul>
+        <li>文書(DOM)に動きをつけるのが役割</li>
+        <li>DOMのElementにイベントをつける</li>
+        <li>文書の内容や計算を処理する</li>
+        <li>HTML5 + Canvasになってからは、もっとなんでもありになった</li>
+      </ul>
+      
+    </section>
+    <section>
+      <h2>JavaScriptの闇</h2>
+      <ul>
+        <li>みんな好きかってやった(JScript...)</li>
+        <li>ブラウザ戦争と互換性問題</li>
+        <li>Scheme由来のあれで、大規模な開発とか無理</li>        
+      </ul>
+    </section>
+    <section>
+      <h2>JavaScriptの闇</h2>
+      <ul>
+        <li>みんな好きかってやった(JScript...)</li>
+        <li>ブラウザ戦争と互換性問題</li>
+        <li>Scheme由来のあれで、大規模な開発とか無理</li>        
+      </ul>
+    </section>
+    <section>
+      <h2>標準化(Ecma Script)と普及</h2>
+      <ul>
+        <li>標準化された</li>
+        <li>各ベンダーがやっとやる気になった</li>
+        <li>一番好き勝手やってたMicrosoftがBrowser戦争にまけたのもの大きい(主観)</li>
+        <li>Chrome</li>
+        <li>スマートフォンの普及</li>
+      </ul>
+    </section>
+    <section>
+      <h2>ES6 (2015)</h2>
+      <ul>
+        <li>大改訂された</li>
+        <li>実質ちがう言語ともいえるほどに</li>
+        <li>ここにアップデートする必要がある</li>
+        <li>class, export, arrow operator, const, let...</li>
+        <li>古いスタイルの資料はWeb上に散乱してるので注意</li>
+      </ul>
+    </section>
+    <section>
+      <h2>CSS</h2>
+      <ul>
+        <li>DOMにデザインをつける</li>
+        <li>どのDOMに？→CSS Selector</li>
+        <li>どんなデザインを？→CSS Property</li>     
+      </ul>
+    </section>
+    <section>
+      <h2>CSS selector</h2>
+      <pre>
+        div.hello .text { /*←ここ*/
+        ...
+        }
+      </pre>
+      <ul>
+        <li>div.hello .textの部分</li>
+        <li>この内容に従って、どのDOMがこれにhitするのか決定する</li>
+        <li>hitするやつ全部が対象</li>
+        <li>tag, class, id...</li>
+      </ul>
+    </section>
+    <section>
+      <h2>CSS selectorの優先順</h2>
+      <ul>
+        <li>同じプロパティがあったとき、優先順に従ってプロパティが適用される</li>
+        <li>優先順はどうなっているのか→闇</li>
+        <li>idつよい、important!つよい、いっぱい属性ついてるのつよい</li>
+      </ul>
+      <a href="https://www.amazon.co.jp/dp/B076HZSWTM/" target="_blank">CSS: The Definitive Guide: Visual Presentation for the Web (English Edition) </a>
+    </section>
+    <section>
+      <h2>CSS property</h2>
+      <pre>
+        div.hello .text { 
+          color: white;/*←ここ*/
+        }
+      </pre>
+      <ul>
+        <li>どんなデザインにするか、の部分</li>
+        <li>別の闇</li>        
+        <li>とにかくいっぱいある</li>
+        <li>ブラウザ互換もまだある</li>
+        <li>知ってる知らないだけのものもあるので大変</li>
+      </ul>
+    </section>
+    <section>
+      <h2>プログラミング</h2>
+      <ul>
+        <li>DOMを書くのも</li>
+        <li>jsを書くのも</li>
+        <li>cssを書くのも</li>
+        <li>それぞれに役割がちがう</li>
+      </ul>
+    </section>
+    <section>
+      <h2>相互作用</h2>
+      <ul>
+        <li>jsがDOMを生成したり削除したりする</li>
+        <li>jsが動的にDOMにstyleを設定する</li>
+        <li>jsが動的にDOMにclassを設定する</li>
+      </ul>
+    </section>
+    <section>
+      <h2>まとめ</h2>
+      <ul>
+        <li>文書、デザイン、動作が別々に定義される</li>
+        <li>それぞれをhtml,JavaScript,CSSとしてプログラムする</li>
+        <li>相互作用があり、それによって表現をする</li>
+        <li>しかも、もうこれだけじゃない、つらみ</li>
+      </ul>
+    </section>
+    
+    <script>
+      const sections = document.querySelectorAll('section')
+      let page = 0
+
+      const display_section = () => {
+          sections.forEach(section => {
+              section.classList.remove('enabled')
+          })
+          sections[page].classList.add('enabled')
+      }
+
+      document.addEventListener('keydown', (event) => {
+          if(event.code === "ArrowRight"){
+              if(sections.length > page + 1){
+                  page++
+              }
+          } else if(event.code === "ArrowLeft"){
+              if(page !== 0){
+                  page--
+              }
+          } else if(event.code === "ArrowUp"){
+              page = 0
+          } 
+          display_section()         
+      })
+      display_section()
+    </script>
+  </body>
+</html>

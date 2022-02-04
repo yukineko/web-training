@@ -1,0 +1,184 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Web Basic 02 css layout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">    
+  </head>
+  <body>
+    <style type="text/css">
+      
+      body {
+          background-color:black;
+          color: white;
+          font-family: 'Noto Sans JP', sans-serif;
+          font-size: 32px;          
+      }
+      section {
+          background-color:black;
+          color: white;
+      }
+      h1 {
+          font-size: 80px;
+          font-weight: 500;
+      }
+      h2 {
+          font-size: 50px;
+          font-weight: 500;          
+      }
+      ul li {
+          font-size: 32px;
+          font-weight: 100;
+          margin: 20px 0;
+      }
+      section {
+          height: 80vh;
+          margin: 0;
+          padding: 40px;
+      }
+      section {
+          display: none;
+      }
+
+      section.enabled {
+          display:block;
+      }
+
+      a {
+          color: white;
+      }
+      p {
+          margin: 5px;
+      }
+    </style>
+    <section>
+      <h1>まずはレイアウトだ</h1>
+    </section>
+    <section>
+      <h2>最初にむずかしいこととはなにか</h2>
+      <ul>
+        <li>とにかく見た目がつくれないんじゃ未来はない</li>
+        <li>HTML?</li>
+        <li>CSS?</li>
+      </ul>
+    </section>
+    <section>
+      <h2>レイアウトつかないと話がはじまらないよ!</h2>
+      <ul>
+        <li>なにを？(DOM)</li>
+        <li>どこに？(DOM)</li>        
+      </ul>
+    </section>
+    <section>
+      <h2>コマ割り</h2>
+      <ul>
+        <li>画面をコマでわる</li>
+        <li>それぞれの場所にブロックを配置する</li>
+        <li>縦にならぶか、横にならぶか</li>
+        <li>ななめとかはちょっと...</li>
+      </ul>
+    </section> 
+    <section>
+      <h2>コマ割り</h2>
+      <pre>
+        img.hoge {
+          display: block;
+        }
+      </pre>
+      <ul>
+        <li>ブロックとは→ブロック要素(display: block;)</li>
+        <li>ブロックじゃない→inline
+          <ul>
+            <li>img</li>
+            <li>span</li>
+            <li>button</li>
+            <li>a</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>block</h2>
+      <ul>
+        <li>縦にならぶ(breakされる)</li>
+        <li>要素にwidth, heightがきちんとある</li>
+        <li>margin, paddingがある</li>
+        <li>横にならべたい？→inline-block</li>
+        <li>デフォルトの設定はタグごとにあるが、上書きできる</li>
+      </ul>
+    </section>
+    <section>
+      <h2>inline</h2>
+      <ul>
+        <li>横にならぶ(breakされない)</li>
+        <li>要素にwidth, heightがきちんとしてない</li>
+        <li>margin, paddingがない</li>
+        <li>文章の中にいれられるかどうか</li>
+      </ul>
+    </section>
+    <section>
+      <h2>おおまかに</h2>
+      <ul>
+        <li>コマわりはblock</li>
+        <li>コンテンツはinline</li>
+      </ul>
+    </section>
+    <section>
+      <h2>blockの調整</h2>
+      <ul>
+        <li>block間の調整はmargin</li>
+        <li>block内の調整はpadding</li>
+      </ul>
+    </section>
+    <section>
+      <h2>万能のflex</h2>
+      <ul>
+        <li>レイアウトのチート</li>
+        <li>いろんなレイアウトがまあまあ楽につくれる</li>
+        <li>設定項目がふくざつでめんどう</li>
+      </ul>
+    </section>
+    <section>
+      <h2>中央寄せ</h2>
+      <pre>
+        div.center {
+          margin: 0 auto;
+        }
+      </pre>
+      <ul>
+        <li>blockはmargin: auto;</li>
+        <li>inlineはtext-align</li>
+        <li>右とか左はこれの応用</li>
+        <li>flexでやっちまう話もある</li>
+      </ul>
+    </section>
+    <script>
+      const sections = document.querySelectorAll('section')
+      let page = 0
+
+      const display_section = () => {
+          sections.forEach(section => {
+              section.classList.remove('enabled')
+          })
+          sections[page].classList.add('enabled')
+      }
+
+      document.addEventListener('keydown', (event) => {
+          if(event.code === "ArrowRight"){
+              if(sections.length > page + 1){
+                  page++
+              }
+          } else if(event.code === "ArrowLeft"){
+              if(page !== 0){
+                  page--
+              }
+          } else if(event.code === "ArrowUp"){
+              page = 0
+          } 
+          display_section()         
+      })
+      display_section()
+    </script>
+  </body>
+</html>
